@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AuthUser {
+  id           String         @id @unique
+  auth_session AuthSession[]
+  auth_key     AuthKey[]
+  username     String         @unique
+  create_date  DateTime       @default(now())
+  wish_history wish_history[]
+
+  @@map("auth_user")
+}
+
+model AuthSession {
+  id             String   @id @unique
+  user_id        String
+  active_expires BigInt
+  idle_expires   BigInt
+  auth_user      AuthUser @relation(references: [id], fields: [user_id], onDelete: Cascade)
+
+  @@index([user_id])
+  @@map("auth_session")
+}
+
+model AuthKey {
+  id              String   @id @unique
+  hashed_password String?
+  user_id         String
+  primary_key     Boolean
+  expires         BigInt?
+  auth_user       AuthUser @relation(references: [id], fields: [user_id], onDelete: Cascade)
+
+  @@index([user_id])
+  @@map("auth_key")
+}
+
+model wish_history {
+  id         Int      @id @default(autoincrement())
+  gacha_id   BigInt   @unique
+  name       String
+  gacha_type Int
+  item_type  String
+  rank_type  Int
+  time       DateTime
+  uid        Int
+  user       AuthUser @relation(fields: [userID], references: [id])
+  userID     String
+}
+
+// model artifact {
+//   id          Int      @id @default(autoincrement())
+//   username    String   @unique
+//   password    String
+//   create_date DateTime @default(now())
+// }
