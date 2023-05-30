@@ -1,5 +1,7 @@
-#descirption 
+# descirption 
 this is a school final project for ASIR
+
+# summary
 This is an tool for importing and view the stats for game genshin imact
 
 # create-svelte
