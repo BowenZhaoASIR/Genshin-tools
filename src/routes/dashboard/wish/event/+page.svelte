@@ -32,26 +32,6 @@
 		}
 	}
 
-	// data.charactersPulled.forEach((element) => {
-	// 	if (element.item_type === 'Weapon') {
-	// 		const icon_weapon = weapon(element.name);
-	// 		const newItem = {
-	// 			[element.name]: {
-	// 				icon: icon_weapon
-	// 			}
-	// 		};
-	// 		item_icon.push(newItem);
-	// 	} else {
-	// 		const icon_characters = character(element.name);
-	// 		const newItem = {
-	// 			[element.name]: {
-	// 				icon: icon_characters
-	// 			}
-	// 		};
-	// 		item_icon.push(newItem);
-	// 	}
-	// });
-
 	//--------------------chart render function---------------------
 	import Chart from 'chart.js/auto';
 	import { onMount } from 'svelte';
@@ -156,54 +136,6 @@
 			});
 		}
 	onMount(createChart2);
-// 	let defaultColors = [
-// 	"#2a9d8f", "#e9c46a", "#f4a261", "#e76f51", "#990099", "#0077b6", "#0099C6",
-// 	"#fb5607", "#3a5a40", "#f5cac3", "#118ab2", "#06d6a0", "#a7c957", "#8ac926",
-// 	"#1982c4", "#ff595e", "#6a4c93", "#329262", "#b9aaee", "#9bf6ff"
-// ];
-// 			const charactername = [];
-// 			data.charactersPulled.forEach(element => {
-// 				charactername.push(element.name)
-// 			});
-// 				function createChart3() {
-// 					const ctx = document.getElementById('Event');
-// 					var chart = new Chart(ctx, {
-// 						type: 'pie',
-// 						data: {
-// 							labels: charactername,
-// 							datasets: [
-// 								{
-// 									label: 'Total pull',
-// 									data: [data.totalweaponcount, data.totalcharactercount, data.totalcharactercount],
-// 									backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
-// 									borderWidth: 1,
-// 									hoverOffset: 2
-// 								}
-// 							]
-// 						},
-// 						options: {
-// 							layout: {
-// 								padding: {
-// 									bottom(ctx) {
-// 										const chart = ctx.chart;
-// 										let pb = 0;
-// 										chart.data.datasets.forEach(function (el) {
-// 											const hOffset = el.hoverOffset || 0;
-// 											pb = Math.max(hOffset / 2 + 5, pb);
-// 										});
-// 										return pb;
-// 									}
-// 								}
-// 							},
-// 							plugins: {
-// 								legend: {
-// 								display: false 
-// 							}
-// 							}
-// 						}
-// 					});
-// 				}
-// 				onMount(createChart3);
 }
 </script>
 

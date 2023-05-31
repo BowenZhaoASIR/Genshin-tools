@@ -40,7 +40,7 @@ export const POST = async ({ locals , request }) => {
       });
     }
   };
-async function wish(
+ function wish(
     pointer = "wish_history",
     page_num = 1,
     gacha_type = 301 ,
