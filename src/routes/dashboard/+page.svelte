@@ -50,19 +50,19 @@
 				'<div class="container"><small><b>' +
 				name +
 				'</b></small></div></article></a>';
-    char_cards += char_card;
-    count++;
-    if (count % 6 === 0) {
-      char_cards += '</div><div class="grid char_grid">';
-    }
-    if (count >= 66) {
-      break;
-    }
-  }
-  char_cards += '</div>';
-  cards = char_cards;
-  return cards
-}
+			char_cards += char_card;
+			count++;
+			if (count % 6 === 0) {
+				char_cards += '</div><div class="grid char_grid">';
+			}
+			if (count >= 66) {
+				break;
+			}
+		}
+		char_cards += '</div>';
+		cards = char_cards;
+		return cards;
+	}
 </script>
 
 <img class="sideimg" src="/img/side background.jpg" alt="" />

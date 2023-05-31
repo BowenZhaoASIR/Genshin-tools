@@ -10,7 +10,6 @@
 	let cards = '';
 	if (filter === 'reset') {
 		characters = genshindb.characters('names', { matchCategories: true });
-		char_name(characters);
 	}
 	export async function char_name(characters) {
 		let char_cards = '<div class="grid char_grid">';
@@ -65,86 +64,86 @@
 	function pyro() {
 		filter = 'pyro';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function hydro() {
 		filter = 'hydro';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function anemo() {
 		filter = 'anemo';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function electro() {
 		filter = 'electro';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function dendro() {
 		filter = 'dendro';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function cryo() {
 		filter = 'cryo';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function geo() {
 		filter = 'geo';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 	function reset() {
 		filter = 'reset';
 		characters = genshindb.characters('name', { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function sword() {
 		filter = 'sword';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function claymore() {
 		filter = 'claymore';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function polearm() {
 		filter = 'polearm';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function catalyst() {
 		filter = 'catalyst';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 
 	function bow() {
 		filter = 'bow';
 		characters = genshindb.characters(filter, { matchCategories: true });
-		char_name(characters);
+		return characters
 	}
 	function name_f() {
 		let cname_array = [];
 		let cname_status;
 		let lowcasename;
 		let cleaname;
-		// let cname_f = genshindb.characters('name' , { matchCategories: true } );
-		let cname_f = characters;
+		let cname_f = genshindb.characters('name' , { matchCategories: true } );
+		// let cname_f = characters;
 		cname_f.forEach((element) => {
 			lowcasename = name_filter.toLocaleLowerCase();
 			cleaname = lowcasename.replace(/ /g, '');
@@ -159,7 +158,7 @@
 				cname_array = cname_array.concat(og_name?.name);
 			}
 		});
-		char_name(cname_array);
+		return characters = cname_array;
 	}
 </script>
 
@@ -211,7 +210,6 @@
 			<button on:click={bow}><img class="weapon2" src="/img/weapon/Bow.webp" alt="Bow" /></button>
 		</div>
 	</div>
-	{#if !name_filter && filter !== "reset" }
 		{#await char_name(characters)}
 			<div id="char_card_container">
 				<div class="grid char_grid">
@@ -223,11 +221,6 @@
 				{@html cards}
 			</div>
 		{/await}
-	{:else}
-		<div id="char_card_container">
-			{@html cards}
-		</div>
-	{/if}
 	<div class="container user">
 		<div class="row profile">
 			<div class="col-6 container profile">

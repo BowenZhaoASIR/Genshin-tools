@@ -3,7 +3,7 @@ import type { PageServerLoad } from "./$types";
 import { prisma } from "$lib/server/prisma";
 import type { Action } from "../$types";
 import { characters } from "genshin-db";
-
+export const prerender = false
 export const load: PageServerLoad = async ({ locals }) => {
     const { user } = await locals.auth.validateUser();
     if (!user) {

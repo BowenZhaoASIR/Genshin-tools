@@ -30,26 +30,15 @@
 				<!-- <li style="display:none;"><a href="/">Boss</a></li> -->
 				<li><a href="/characters">Characters</a></li>
 				<!-- <li style="display:none;"><a href="/">Consumables</a></li>
-            <li style="display:none;"><a href="/">Domains</a></li>
-            <li style="display:none;"><a href="/">Elements</a></li>
-            <li style="display:none;"><a href="/">Enemies</a></li>
-            <li style="display:none;"><a href="/">Materials</a></li>
-            <li style="display:none;"><a href="/">Nations</a></li>
-            <li style="display:none;"><a href="/">Weapons</a></li>
-          </ul> -->
+				<li style="display:none;"><a href="/">Domains</a></li>
+				<li style="display:none;"><a href="/">Elements</a></li>
+				<li style="display:none;"><a href="/">Enemies</a></li>
+				<li style="display:none;"><a href="/">Materials</a></li>
+				<li style="display:none;"><a href="/">Nations</a></li>
+				<li style="display:none;"><a href="/">Weapons</a></li>
+			</ul> -->
 			</ul>
 		</details>
 	</nav>
 </div>
 
-
-<style>
-	/* .menu .profile{
-    background-color: rgba(255, 255, 255, 0.685);
-    border-radius:10px;
-    margin:455px 0px 0px -28px;
-    height: 90px;
-    width: 110%;
-    display: flex;
-  } */
-</style>

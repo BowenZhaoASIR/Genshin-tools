@@ -18,7 +18,7 @@ export const load = async () => {
   let error = ''
   let get_wish_history = [];
   let wish_loop = [];
-  function wish(
+  async function wish(
       pointer = "wish_history",
       page_num = 1,
       gacha_type = 301 ,
@@ -125,3 +125,10 @@ export const load = async () => {
             }); 
             console.log(wishdata)
         }
+
+            // async function save_data() {
+            //   await prisma.wish_history.createMany({
+            //     Data
+            //   });  
+            // }
+            // console.log(Data)

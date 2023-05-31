@@ -1,8 +1,8 @@
   <script>
 // @ts-nocheck
-	/** @type {import('./$types').PageData} */
-	  export let data;
+    /** @type {import('./$types').PageData} */
     import { onMount } from 'svelte';
+    export let data;
     const {name} = data;
     import Menu from '../../Menu.svelte';
     import MenuLoged from './../../dashboard/Menu.svelte'; 
@@ -123,7 +123,6 @@
             ><img class="userlogo" src="/img/userlogo/characters.webp" alt="logo" /></a
           >
         </div>
-
         {#if data.user}
         <div class="col">
           <form action="/api/signout" method="post">

@@ -28,30 +28,30 @@
 			} else {
 				char_color = '#8e5a9c';
 			}
-    let char_card =
-		'<a class="char_card" align="left" style="text-decoration:none; color:black;" href=/characters/' +
-		c_name +
-		'><article class="char_card_class" id="char_card" style="background-color:' +
-		char_color +
-		';"><img src="https://res.cloudinary.com/genshin/image/upload/sprites/' +
-		char_icon +
-		'" on:error={reload_image} alt="icon">' +
-		'<div class="container"><small><b>' +
-		name +
-		'</b></small></div></article></a>';
-    char_cards += char_card;
-    count++;
-    if (count % 6 === 0) {
-      char_cards += '</div><div class="grid char_grid">';
-    }
-    if (count >= 66) {
-      break;
-    }
-  }
-  char_cards += '</div>';
-  cards = char_cards;
-  return cards
-}
+			let char_card =
+				'<a class="char_card" align="left" style="text-decoration:none; color:black;" href=/characters/' +
+				c_name +
+				'><article class="char_card_class" id="char_card" style="background-color:' +
+				char_color +
+				';"><img src="https://res.cloudinary.com/genshin/image/upload/sprites/' +
+				char_icon +
+				'" on:error={reload_image} alt="icon">' +
+				'<div class="container"><small><b>' +
+				name +
+				'</b></small></div></article></a>';
+			char_cards += char_card;
+			count++;
+			if (count % 6 === 0) {
+				char_cards += '</div><div class="grid char_grid">';
+			}
+			if (count >= 66) {
+				break;
+			}
+		}
+		char_cards += '</div>';
+		cards = char_cards;
+		return cards;
+	}
 </script>
 
 <img class="sideimg" src="/img/side background.jpg" alt="" />

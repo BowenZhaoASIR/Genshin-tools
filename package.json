@@ -1,9 +1,8 @@
 {
-	"name": "genshin_tools",
-	"version": "1.0.0",
+	"name": "genshin-project",
+	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev --port 80",
-		"special": "vite dev --host 0.0.0.0 --port 80 ",
+		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",

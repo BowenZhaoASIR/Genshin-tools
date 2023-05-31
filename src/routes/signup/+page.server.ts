@@ -4,7 +4,7 @@ import { Prisma } from '@prisma/client';
 import { redirect } from '@sveltejs/kit';
 import { LuciaError } from 'lucia-auth';
 import type { PageServerLoad } from './$types';
-export const prerender = false;
+
 export const actions: Actions = {
 	default: async ({ request, locals }) => {
 		const form = await request.formData();

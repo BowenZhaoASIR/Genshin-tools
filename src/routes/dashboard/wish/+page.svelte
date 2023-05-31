@@ -298,14 +298,14 @@
 			</div>
 		</article>
 	</div>
-	<!-- {#if chart } -->
+	<!-- {#if data.totalEventPull === !0 && data.totalWeaponPull === !0 && data.totalPermanentPull === !0} -->
 	<div class="flexbox_chart"> 
-			<div class="chart">
-				<canvas id="Event" />
-			</div>
-			<div class="chart2">
-				<canvas id="myChart2" />
-			</div>
+		<div class="chart">
+			<canvas id="Event" />
+		</div>
+		<div class="chart2">
+			<canvas id="myChart2" />
+		</div>
 	</div>
 	<!-- {/if} -->
 	<div class="container user">

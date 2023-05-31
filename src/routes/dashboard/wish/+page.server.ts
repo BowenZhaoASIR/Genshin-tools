@@ -39,21 +39,21 @@ export const load: PageServerLoad = async ({ locals }) => {
         },
       });
 
-      async function get4star( pull_data: Array<any>) {
+      async function get5star(pull_data: Array<any>) {
         let count = 0
         for (let i = 0; i <= pull_data.length ; i++) {
-          if( pull_data[1] || pull_data[i]?.rank_type === 4 ){
+          if( pull_data[i]?.rank_type === 5 ){
             break;
           }
           count++
         }
         return count
       }
-
-      async function get5star(pull_data: Array<any>) {
+      // console.log(pull_data);
+      async function get4star( pull_data: Array<any>) {
         let count = 0
         for (let i = 0; i <= pull_data.length ; i++) {
-          if( pull_data[i]?.rank_type === 5 ){
+          if( pull_data[i] || pull_data[i].rank_type === 5 ){
             break;
           }
           count++
@@ -74,6 +74,8 @@ export const load: PageServerLoad = async ({ locals }) => {
           id: 'desc'
         }
       });
+      
+      
       if (getpull_E.length !== 0) {
         const current_4star_E = await get4star(getpull_E)
         const current_5star_E = await get5star(getpull_E)
@@ -128,6 +130,7 @@ export const load: PageServerLoad = async ({ locals }) => {
           id: 'desc'
         }
       });
+
       if (getpull_P.length !== 0) {
         const current_4star_P = await get4star(getpull_P)
         const current_5star_P = await get5star(getpull_P)

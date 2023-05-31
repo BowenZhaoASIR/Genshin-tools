@@ -225,7 +225,7 @@
 						</div>
 						<div class="banner_data">
 							<p class="back"><b>Permanent Banner Total pulls: &nbsp;&nbsp;</b><b style="color:#B0DAFF;">{data.star_5+data.star_4+data.star_3}
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							</b><b style="color:#ffb23f;">5 ★: {data.star_5}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#9f67a2;">4 ★: {data.star_4}</b> 
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#6DA9E4;">3 ★: {data.star_3}</b></p>
 						</div>

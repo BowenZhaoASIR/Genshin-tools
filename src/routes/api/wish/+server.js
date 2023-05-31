@@ -40,7 +40,7 @@ export const POST = async ({ locals , request }) => {
       });
     }
   };
- function wish(
+async function wish(
     pointer = "wish_history",
     page_num = 1,
     gacha_type = 301 ,
@@ -94,7 +94,7 @@ export const POST = async ({ locals , request }) => {
                         end_id = wish_loop[wish_loop.length - 1].id; 
                         return setTimeout(() => {
                             wish( pointer = "wish_history", page_num, gacha_type, end_id, response)
-                        }, 150);
+                        }, 50);
                     }
                 }
             }
@@ -181,7 +181,6 @@ async function map() {
         "---------------------------------------------"+
         "\n"+" -total of "+counter+ " item 0 row affected-"
         );
-        counter = 0
     }
     else{
         const inserts = Uniquedata.map(d => prisma.wish_history.create({
@@ -205,7 +204,6 @@ async function map() {
             "---------------------------------------------"+
             "\n"+" -total of "+counter+ " item "+ inserts.length + " row is affected-"
             );
-            counter = 0
     }
   }
 //   -------------------------------------test----------------------------------------
