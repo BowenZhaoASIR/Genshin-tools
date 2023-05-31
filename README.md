@@ -1,3 +1,9 @@
+# descirption 
+this is a school final project for ASIR
+
+# summary
+This is an tool for importing and view the stats for game genshin imact
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
