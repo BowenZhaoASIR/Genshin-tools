@@ -1,3 +1,7 @@
+// test
+const PORT = 8080;
+const HOST = '0.0.0.0';
+
 // import express from "express";
 // import cors from "cors";
 // import { handler } from './build/handler.js';
