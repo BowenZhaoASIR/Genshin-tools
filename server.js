@@ -1,5 +1,5 @@
-const express = require('express');
-const path = require('path');
+const express from 'express';
+const path from 'path';
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -16,4 +16,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-and 
