@@ -1,22 +1,19 @@
-import http from 'http';
+const express = require('express');
+const path = require('path');
 
-// server object
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, server!');
-});
-
-// Define the port
+const app = express();
 const port = process.env.PORT || 8080;
 
+// Serve static files from the "wwwroot" directory
+app.use(express.static(path.join(__dirname, 'wwwroot')));
+
+// Define a route to serve your application
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'wwwroot', 'src', 'app.html'));
+});
+
 // Start the server
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-// Error
-server.on('error', (err) => {
-  console.error('Server error:', err.message);
-});
-
+and 
