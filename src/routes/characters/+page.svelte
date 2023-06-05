@@ -12,48 +12,48 @@
      characters = genshindb.characters('names', { matchCategories: true });
      char_name(characters);
   }
- export async function char_name(characters) {
-  let char_cards = '<div class="grid char_grid">';
-  let char_name;
-  let count = 0;
-  for (let name of characters) {
-    if (name === "Aether" || name === "Lumine") {
-      continue;
-    }
-    char_name = genshindb.characters(name);
-    let c_name = char_name?.name.replace(" ", "_");
-    let char_icon = char_name?.images.icon;
-    let char_rank = char_name?.rarity;
-    let char_color;
-    if (char_rank == "5") {
-      char_color = "#c98f1c";
-    } else {
-      char_color = "#8e5a9c";
-    }
-    let char_card =
-      '<a class="char_card" align="left" style="text-decoration:none; color:black;" href=/characters/' +
-      c_name +
-      '><article class="char_card_class" id="char_card" style="background-color:' +
-      char_color +
-      ';"><img src="' +
-      char_icon +
-      '" alt="icon">' +
-      '<div class="container"><small><b>' +
-      name +
-      '</b></small></div></article></a>';
-    char_cards += char_card;
-    count++;
-    if (count % 6 === 0) {
-      char_cards += '</div><div class="grid char_grid">';
-    }
-    if (count >= 66) {
-      break;
-    }
-  }
-  char_cards += '</div>';
-  cards = char_cards;
-  return cards
-}
+export async function char_name(characters) {
+		let char_cards = '<div class="grid char_grid">';
+		let char_name;
+		let count = 0;
+		for (let name of characters) {
+			if (name === 'Aether' || name === 'Lumine') {
+				continue;
+			}
+			char_name = genshindb.characters(name);
+			let c_name = char_name?.name.replace(' ', '_');
+			let char_icon = char_name?.images.nameicon;
+			let char_rank = char_name?.rarity;
+			let char_color;
+			if (char_rank == '5') {
+				char_color = '#c98f1c';
+			} else {
+				char_color = '#8e5a9c';
+			}
+			let char_card =
+				'<a class="char_card" align="left" style="text-decoration:none; color:black;" href=/characters/' +
+				c_name +
+				'><article class="char_card_class" id="char_card" style="background-color:' +
+				char_color +
+				';"><img src="https://res.cloudinary.com/genshin/image/upload/sprites/' +
+				char_icon +
+				'" on:error={reload_image} alt="icon">' +
+				'<div class="container"><small><b>' +
+				name +
+				'</b></small></div></article></a>';
+			char_cards += char_card;
+			count++;
+			if (count % 6 === 0) {
+				char_cards += '</div><div class="grid char_grid">';
+			}
+			if (count >= 66) {
+				break;
+			}
+		}
+		char_cards += '</div>';
+		cards = char_cards;
+		return cards;
+	}
         function pyro() {
           filter = 'pyro';
           characters = genshindb.characters( filter , { matchCategories: true });
