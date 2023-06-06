@@ -10,10 +10,16 @@ export const actions: Actions = {
 		const form = await request.formData();
 		const username = form.get('username');
 		const password = form.get('password');
-		if (!username || !password || typeof username !== 'string' || typeof password !== 'string') {
+		const confirm = form.get('confirm');
+		if (!username || !password || typeof username !== 'string' || typeof password !== 'string' || typeof confirm !== 'string') {
 			return fail(400, {
 				message: 'Invalid input'
 			});
+			if ( password != confirm ){
+			return fail(400, {
+				message: 'password dont match'
+			});	
+			}
 		}
 		try {
 			const user = await auth.createUser({
