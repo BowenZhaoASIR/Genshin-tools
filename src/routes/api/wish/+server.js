@@ -54,8 +54,8 @@ async function wish(
   );
   console.log(url_end);  
   let url_history = url_proxy + url_head + apikey + url_end;
+  console.log(url_history);
   const response = await fetch(url_history).then((wishinfor) => wishinfor.json());
-  console.log(url_history);  
   console.log(response);
   if (response && response.data && response.data.list) {
     const newwishinfor = response.data.list;
