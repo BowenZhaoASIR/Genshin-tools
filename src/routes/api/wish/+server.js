@@ -48,9 +48,7 @@ async function wish(
 ) {
   console.log("fetching");
   let url_end = encodeURIComponent('&gacha_type=' + gacha_type + '&page=' + page_num + '&size=5&end_id=' + end_id);
-  console.log(url_end);  
   let url_history = url_proxy + url_head + apikey + url_end;
-  console.log(url_history);
   const response = await fetch(url_history)
   .then((wishinfor) => {
     if (!wishinfor.ok) {
@@ -62,9 +60,6 @@ async function wish(
     console.error(error);
   });
 
-console.log(response);
-
-  console.log(response);
   if (response && response.data && response.data.list) {
     const newwishinfor = response.data.list;
 
@@ -111,21 +106,18 @@ console.log(response);
       }
     } else {
       if (gacha_type === 301) {
-        console.log("else 301");
         page_num = 1;
         end_id = 0;
         gacha_type = 302;
         console.log("from 301 to 302");
         return await wish(pointer, page_num, gacha_type, end_id, response);
       } else if (gacha_type === 302) {
-        console.log("else 302");
         page_num = 1;
         end_id = 0;
         gacha_type = 200;
         console.log("from 302 to 200");
         return await wish(pointer, page_num, gacha_type, end_id, response);
       } else if (gacha_type === 200) {
-        console.log("else 200");
         console.log("wish history imported successfully");
         wish_history = get_wish_history;
         map();
