@@ -51,7 +51,19 @@ async function wish(
   console.log(url_end);  
   let url_history = url_proxy + url_head + apikey + url_end;
   console.log(url_history);
-  const response = await fetch(url_history).then((wishinfor) => wishinfor.json());
+  const response = await fetch(url_history)
+  .then((wishinfor) => {
+    if (!wishinfor.ok) {
+      throw new Error(`HTTP error! Status: ${wishinfor.status}`);
+    }
+    return wishinfor.json();
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+console.log(response);
+
   console.log(response);
   if (response && response.data && response.data.list) {
     const newwishinfor = response.data.list;
