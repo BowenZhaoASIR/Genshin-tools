@@ -16,7 +16,7 @@ let counter = 0;
 let wish_loop = [];
 let userID = "";
 const url_proxy = "https://corsproxy.io/?";
-const url_head = encodeURIComponent('https://hk4e-api-os.hoyoverse.com/event/gacha_info/api/getGachaLog?authkey_ver=1&sign_type=2&auth_appid=webview_gacha&init_type=301&lang=en&authkey=');
+const url_head = 'https://hk4e-api-os.hoyoverse.com/event/gacha_info/api/getGachaLog?authkey_ver=1&sign_type=2&auth_appid=webview_gacha&init_type=301&lang=en&authkey=';
 let apikey;
 
 export const POST = async ({ locals, request }) => {
