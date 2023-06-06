@@ -52,6 +52,7 @@ async function wish(
   let url_end = encodeURIComponent(
     "&gacha_type=" + gacha_type + "&page=" + page_num + "&size=5&end_id=" + end_id
   );
+  console.log(url_end);  
   let url_history = url_proxy + url_head + apikey + url_end;
   const response = await fetch(url_history).then((wishinfor) => wishinfor.json());
   console.log(url_history);  
