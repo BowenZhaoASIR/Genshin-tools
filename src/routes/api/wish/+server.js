@@ -22,6 +22,9 @@ let apikey;
 export const POST = async ({ locals, request }) => {
   try {
     const { user } = await locals.auth.validateUser();
+    if (!user) {
+        throw redirect(301 , "/")
+    }
     const getuser = user.userId;
     userID = getuser;
     const body = await request.text();
