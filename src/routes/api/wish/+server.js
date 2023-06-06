@@ -1,7 +1,6 @@
 //------------------------V2-------------------------------
 import { banner_name } from "$lib/store/wish_history.js";
 import { prisma } from "$lib/server/prisma";
-import { API_KEY } from "$env/static/private";
 import { redirect } from "@sveltejs/kit";
 
 let wishdata = [];
