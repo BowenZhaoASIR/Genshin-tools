@@ -29,8 +29,6 @@ export const POST = async ({ locals, request }) => {
     const body = await request.text();
     const parsedBody = JSON.parse(body);
     apikey = encodeURIComponent(parsedBody);
-    // Perform additional operations as needed
-    // ...
     await wish();
     return new Response(JSON.stringify({ message: "Fetching" }), {
       status: 200,
@@ -56,7 +54,8 @@ async function wish(
   );
   let url_history = url_proxy + url_head + apikey + url_end;
   const response = await fetch(url_history).then((wishinfor) => wishinfor.json());
-
+  console.log(url_history);  
+  console.log(response);
   if (response && response.data && response.data.list) {
     const newwishinfor = response.data.list;
 
