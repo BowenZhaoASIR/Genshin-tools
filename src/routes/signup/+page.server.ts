@@ -15,11 +15,11 @@ export const actions: Actions = {
 			return fail(400, {
 				message: 'Invalid input'
 			});
-			if ( password != confirm ){
+		}
+		if ( password != confirm ){
 			return fail(400, {
 				message: 'password dont match'
 			});	
-			}
 		}
 		try {
 			const user = await auth.createUser({
